@@ -31,9 +31,9 @@ const mongourl = "mongodb://192.168.0.107:27017/sean";
         }
         // Type into search box
         try {
-
-        }catch (e) {
             await page.type("input[type=search]", starNames[i]);
+        }catch (e) {
+
         }
 
         // 回车
