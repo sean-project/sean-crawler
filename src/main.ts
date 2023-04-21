@@ -21,9 +21,14 @@ const mongourl = "mongodb://192.168.0.107:27017/sean";
         }
     })
     for (let i = 0; i < starNames.length; i++) {
-        await page.goto('https://m.weibo.cn/search?containerid=231583');
-        // Set screen size
-        await page.setViewport({width: 375, height: 1024});
+
+        try {
+            await page.goto('https://m.weibo.cn/search?containerid=231583');
+            // Set screen size
+            await page.setViewport({width: 375, height: 1024});
+        } catch (e) {
+            
+        }
         try {
             await page.waitForSelector("input[type=search]",{timeout:500})
         } catch (e) {
