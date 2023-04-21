@@ -27,7 +27,7 @@ const mongourl = "mongodb://192.168.0.107:27017/sean";
         try {
             await page.waitForSelector("input[type=search]",{timeout:3000})
         } catch (e) {
-            
+
         }
         // Type into search box
         await page.type("input[type=search]", starNames[i]);
@@ -38,9 +38,14 @@ const mongourl = "mongodb://192.168.0.107:27017/sean";
         try {
             await page.waitForSelector(searchResultSelector,{timeout:3000})
         } catch (e) {
-            
+
         }
-        await page.click(searchResultSelector);
+        try {
+            await page.click(searchResultSelector);
+        } catch (e) {
+
+        }
+
 
         // const response = await page.waitForResponse((res)=>res.url().includes('api/container/getIndex?uid'))
         // await dbo.collection("star").insertMany([await response.json()])
