@@ -25,7 +25,7 @@ const mongourl = "mongodb://192.168.0.107:27017/sean";
         // Set screen size
         await page.setViewport({width: 375, height: 1024});
         try {
-            await page.waitForSelector("input[type=search]",{timeout:3000})
+            await page.waitForSelector("input[type=search]",{timeout:500})
         } catch (e) {
 
         }
@@ -41,7 +41,7 @@ const mongourl = "mongodb://192.168.0.107:27017/sean";
         // Wait and click on first result
         const searchResultSelector = 'div.card.m-panel.card28.m-avatar-box > div > div > div > div.m-img-box';
         try {
-            await page.waitForSelector(searchResultSelector,{timeout:3000})
+            await page.waitForSelector(searchResultSelector,{timeout:500})
         } catch (e) {
 
         }
