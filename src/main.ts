@@ -24,14 +24,22 @@ const mongourl = "mongodb://192.168.0.107:27017/sean";
         await page.goto('https://m.weibo.cn/search?containerid=231583');
         // Set screen size
         await page.setViewport({width: 375, height: 1024});
-        await page.waitForSelector("input[type=search]",{timeout:3000}).catch(err=>true)
+        try {
+            await page.waitForSelector("input[type=search]",{timeout:3000})
+        } catch (e) {
+            
+        }
         // Type into search box
         await page.type("input[type=search]", starNames[i]);
         // 回车
         await page.keyboard.press('Enter');
         // Wait and click on first result
         const searchResultSelector = 'div.card.m-panel.card28.m-avatar-box > div > div > div > div.m-img-box';
-        await page.waitForSelector(searchResultSelector,{timeout:3000}).catch(err=>true);
+        try {
+            await page.waitForSelector(searchResultSelector,{timeout:3000})
+        } catch (e) {
+            
+        }
         await page.click(searchResultSelector);
 
         // const response = await page.waitForResponse((res)=>res.url().includes('api/container/getIndex?uid'))
