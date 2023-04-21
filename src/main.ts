@@ -54,7 +54,7 @@ const mongourl = "mongodb://192.168.0.107:27017/sean";
 
         // const response = await page.waitForResponse((res)=>res.url().includes('api/container/getIndex?uid'))
         // await dbo.collection("star").insertMany([await response.json()])
-        await sleep(6000)
+        await sleep(600)
     }
     // await browser.close();
 })();
